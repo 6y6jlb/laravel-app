@@ -1,0 +1,189 @@
+2024-05-16T19:26:24.170Z vite:config bundled config file loaded in 54.56ms
+2024-05-16T19:26:24.178Z vite:config using resolved config: {
+  plugins: [
+    'vite:optimized-deps',
+    'vite:watch-package-data',
+    'vite:pre-alias',
+    'alias',
+    'vite:modulepreload-polyfill',
+    'vite:resolve',
+    'vite:html-inline-proxy',
+    'vite:css',
+    'vite:esbuild',
+    'vite:json',
+    'vite:wasm-helper',
+    'vite:worker',
+    'vite:asset',
+    'vite-plugin-full-reload',
+    'vite:vue',
+    'vite:wasm-fallback',
+    'vite:define',
+    'vite:css-post',
+    'vite:worker-import-meta-url',
+    'vite:asset-import-meta-url',
+    'vite:dynamic-import-vars',
+    'vite:import-glob',
+    'laravel',
+    'vite:client-inject',
+    'vite:css-analysis',
+    'vite:import-analysis'
+  ],
+  resolve: {
+    mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+    conditions: [],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [ 'vue' ],
+    preserveSymlinks: false,
+    alias: [ [Object], [Object], [Object], [Object] ]
+  },
+  server: {
+    preTransformRequests: true,
+    host: '0.0.0.0',
+    port: 5173,
+    hmr: { host: 'localhost' },
+    watch: { disableGlobbing: false },
+    origin: '__laravel_vite_placeholder__',
+    sourcemapIgnoreList: [Function: isInNodeModules$1],
+    middlewareMode: false,
+    fs: {
+      strict: true,
+      allow: [Array],
+      deny: [Array],
+      cachedChecks: undefined
+    }
+  },
+  optimizeDeps: {
+    holdUntilCrawlEnd: true,
+    force: undefined,
+    esbuildOptions: { preserveSymlinks: false }
+  },
+  define: {
+    __VUE_OPTIONS_API__: true,
+    __VUE_PROD_DEVTOOLS__: false,
+    __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false
+  },
+  ssr: {
+    target: 'node',
+    external: [],
+    noExternal: [ 'laravel-vite-plugin' ],
+    optimizeDeps: { noDiscovery: true, esbuildOptions: [Object] }
+  },
+  base: '/',
+  publicDir: '',
+  build: {
+    target: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+    cssTarget: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+    outDir: 'public/build',
+    assetsDir: 'assets',
+    assetsInlineLimit: 0,
+    cssCodeSplit: true,
+    sourcemap: false,
+    rollupOptions: { input: [Array] },
+    minify: 'esbuild',
+    terserOptions: {},
+    write: true,
+    emptyOutDir: null,
+    copyPublicDir: true,
+    manifest: 'manifest.json',
+    lib: false,
+    ssr: false,
+    ssrManifest: false,
+    ssrEmitAssets: false,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 500,
+    watch: null,
+    commonjsOptions: { include: [Array], extensions: [Array] },
+    dynamicImportVarsOptions: { warnOnError: true, exclude: [Array] },
+    modulePreload: { polyfill: true },
+    cssMinify: true
+  },
+  configFile: '/usr/src/app/vite.config.js',
+  configFileDependencies: [ '/usr/src/app/vite.config.js' ],
+  inlineConfig: {
+    root: undefined,
+    base: undefined,
+    mode: undefined,
+    configFile: undefined,
+    logLevel: undefined,
+    clearScreen: undefined,
+    optimizeDeps: { force: undefined },
+    server: { host: undefined }
+  },
+  root: '/usr/src/app',
+  rawBase: '/',
+  cacheDir: '/usr/src/app/node_modules/.vite',
+  command: 'serve',
+  mode: 'development',
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: false,
+  css: { lightningcss: undefined },
+  esbuild: { jsxDev: true },
+  preview: {
+    port: undefined,
+    strictPort: undefined,
+    host: '0.0.0.0',
+    https: undefined,
+    open: undefined,
+    proxy: undefined,
+    cors: undefined,
+    headers: undefined
+  },
+  envDir: '/usr/src/app',
+  env: {
+    VITE_CLIENT_URL: 'http://localhost:3000',
+    VITE_APP_HOST: 'localhost',
+    VITE_APP_PORT: '5173',
+    VITE_APP_NAME: 'Laravel',
+    BASE_URL: '/',
+    MODE: 'development',
+    DEV: true,
+    PROD: false
+  },
+  assetsInclude: [Function: assetsInclude],
+  logger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  packageCache: Map(1) {
+    'fnpd_/usr/src/app' => {
+      dir: '/usr/src/app',
+      data: [Object],
+      hasSideEffects: [Function: hasSideEffects],
+      webResolvedImports: {},
+      nodeResolvedImports: {},
+      setResolvedCache: [Function: setResolvedCache],
+      getResolvedCache: [Function: getResolvedCache]
+    },
+    set: [Function (anonymous)]
+  },
+  createResolver: [Function: createResolver],
+  worker: { format: 'iife', plugins: '() => plugins', rollupOptions: {} },
+  appType: 'spa',
+  experimental: { importGlobRestoreExtension: false, hmrPartialAccept: false },
+  getSortedPlugins: [Function: getSortedPlugins],
+  getSortedPluginHooks: [Function: getSortedPluginHooks]
+}
+2024-05-16T19:26:24.218Z vite:deps Hash is consistent. Skipping. Use --force to override.
+
+  VITE v5.2.11  ready in 185 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.128.5:5173/
+
+  LARAVEL v11.2.0  plugin v1.0.3
+
+  ➜  APP_URL: http://localhost:8002
+2024-05-16T19:26:24.372Z vite:hmr [file change] vite.log
+2024-05-16T19:26:24.372Z vite:hmr [no modules matched] vite.log

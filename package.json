@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --debug > /usr/src/app/vite.log 2>&1",
         "build": "vite build"
     },
     "devDependencies": {
@@ -12,6 +12,7 @@
         "vite": "^5.0"
     },
     "dependencies": {
-        "vue": "^3.4.21"
+        "vue": "^3.4.21",
+        "vue3-wizard": "^0.0.7"
     }
 }
