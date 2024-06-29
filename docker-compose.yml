@@ -47,22 +47,22 @@ services:
         networks:
             - my-app-network
 
-    node:
-        build:
-            context: ./_docker/node
-            dockerfile: Dockerfile
-        image: node:20.9-alpine
-        working_dir: /usr/src/app
-        container_name: laravel-node
-        volumes:
-            - .:/usr/src/app
-        ports:
-            - 5173:5173
-        environment:
-            - NODE_ENV=development
-        networks:
-            - my-app-network
-        restart: unless-stopped
+    # node:
+    #     build:
+    #         context: ./_docker/node
+    #         dockerfile: Dockerfile
+    #     image: node:20.9-alpine
+    #     working_dir: /usr/src/app
+    #     container_name: laravel-node
+    #     volumes:
+    #         - .:/usr/src/app
+    #     ports:
+    #         - 5173:5173
+    #     environment:
+    #         - NODE_ENV=development
+    #     networks:
+    #         - my-app-network
+    # restart: unless-stopped
 
 volumes:
     db_data:

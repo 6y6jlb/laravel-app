@@ -3,13 +3,13 @@ import { ref } from "vue";
 
 const steps = [
     "1 step: name",
-    "2 step: a2ge",
-    "3 step: should i make horizontal wizard?",
+    "2 step: age",
+    "3 step: email",
     "4 step: result",
 ];
 
 const step = ref(1);
-const formData = ref({ name: "", age: 18, question: "yes" });
+const formData = ref({ name: "", age: 18, email: "@gmail.com" });
 </script>
 
 <template>
@@ -17,7 +17,14 @@ const formData = ref({ name: "", age: 18, question: "yes" });
         <div class="content-wrapper">
             <div class="wizard-wrapper">
                 <div>step: {{ step }}</div>
-                <vue-wizard :steps="steps" :step="step" class="wrapper" />
+                <div>
+                    <vue-wizard
+                        :steps="steps"
+                        :step="step"
+                        class="wrapper"
+                        orientation="horizontal"
+                    />
+                </div>
             </div>
             <div class="form-wrapper">
                 <div class="item" v-if="step === 1">
@@ -29,17 +36,8 @@ const formData = ref({ name: "", age: 18, question: "yes" });
                     <input type="number" v-model="formData.age" />
                 </div>
                 <div class="item" v-if="step === 3">
-                    <p>Shoul i make horizontal wizard?</p>
-                    <input
-                        type="radio"
-                        v-model="formData.question"
-                        value="yes"
-                    />
-                    <input
-                        type="radio"
-                        v-model="formData.question"
-                        value="no"
-                    />
+                    <p>What is your email?</p>
+                    <input type="email" v-model="formData.email" />
                 </div>
                 <div v-if="step === 4">
                     <p>RESULT</p>

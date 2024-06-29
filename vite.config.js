@@ -24,7 +24,7 @@ export default defineConfig({
     },
     server: {
         host: "0.0.0.0", // Слушать на всех интерфейсах
-        port: 5173,
+        port: 3000,
         hmr: {
             host: "localhost",
         },

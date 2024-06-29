@@ -8,7 +8,8 @@ body {
     padding: 0;
 }
 
-/* .vue-wizard-wrapper {
+.vue-wizard-wrapper {
+    /* --wizard-redifined-step-width: 5rem;
     --wizard-redifined-step-size: 2rem;
     --wizard-redifined-disabled-color: red;
     --wizard-redifined-primary-color: green;
@@ -18,5 +19,5 @@ body {
     --wizard-redifined-line-width: 1rem;
     --wizard-redifined-line-offset: calc(var(--wizard-redifined-line-width) / 2 + var(--wizard-outer-point-width) / 2);
     --wizard-redifined-border-width: 8px;
-    --wizard-redifined-gap: 2rem;
-} */
+    --wizard-redifined-gap: 2rem; */
+}

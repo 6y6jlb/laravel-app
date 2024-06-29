@@ -1,5 +1,5 @@
-2024-05-16T19:26:24.170Z vite:config bundled config file loaded in 54.56ms
-2024-05-16T19:26:24.178Z vite:config using resolved config: {
+2024-05-17T08:58:49.736Z vite:config bundled config file loaded in 56.24ms
+2024-05-17T08:58:49.743Z vite:config using resolved config: {
   plugins: [
     'vite:optimized-deps',
     'vite:watch-package-data',
@@ -175,15 +175,43 @@
   getSortedPlugins: [Function: getSortedPlugins],
   getSortedPluginHooks: [Function: getSortedPluginHooks]
 }
-2024-05-16T19:26:24.218Z vite:deps Hash is consistent. Skipping. Use --force to override.
+2024-05-17T08:58:49.777Z vite:deps removing old cache dir /usr/src/app/node_modules/.vite/deps
+2024-05-17T08:58:49.782Z vite:deps scanning for dependencies...
+2024-05-17T08:58:49.782Z vite:deps Crawling dependencies using entries: 
+  /usr/src/app/resources/js/app.js
 
-  VITE v5.2.11  ready in 185 ms
+  VITE v5.2.11  ready in 188 ms
 
   ➜  Local:   http://localhost:5173/
-  ➜  Network: http://192.168.128.5:5173/
+  ➜  Network: http://172.19.0.5:5173/
+  ➜  press h + enter to show help
+2024-05-17T08:58:49.817Z vite:resolve 0.49ms ./bootstrap -> /usr/src/app/resources/js/bootstrap.js
+2024-05-17T08:58:49.821Z vite:hmr [file change] vite.log
+2024-05-17T08:58:49.822Z vite:hmr [no modules matched] vite.log
+2024-05-17T08:58:49.823Z vite:resolve 0.46ms vue/dist/vue.esm-bundler.js -> /usr/src/app/node_modules/vue/dist/vue.esm-bundler.js
+2024-05-17T08:58:49.823Z vite:resolve 0.82ms vue -> /usr/src/app/node_modules/vue/dist/vue.esm-bundler.js
+2024-05-17T08:58:49.827Z vite:resolve 0.16ms ./components/App.vue -> /usr/src/app/resources/js/components/App.vue
+2024-05-17T08:58:49.835Z vite:resolve 0.11ms ./components/SimpleComponent.vue -> /usr/src/app/resources/js/components/SimpleComponent.vue
+2024-05-17T08:58:49.868Z vite:resolve 0.76ms vue3-wizard -> null
+2024-05-17T08:58:49.883Z vite:hmr [file change] vite.log
+2024-05-17T08:58:49.883Z vite:hmr [no modules matched] vite.log
+2024-05-17T08:58:49.883Z vite:resolve 0.26ms vue3-wizard/dist/style.css -> null
 
   LARAVEL v11.2.0  plugin v1.0.3
 
   ➜  APP_URL: http://localhost:8002
-2024-05-16T19:26:24.372Z vite:hmr [file change] vite.log
-2024-05-16T19:26:24.372Z vite:hmr [no modules matched] vite.log
+2024-05-17T08:58:49.945Z vite:resolve 0.77ms axios -> /usr/src/app/node_modules/axios/index.js
+2024-05-17T08:58:49.969Z vite:hmr [file change] vite.log
+2024-05-17T08:58:49.969Z vite:hmr [no modules matched] vite.log
+2024-05-17T08:58:49.991Z vite:deps Scan completed in 209.16ms: 
+  axios -> /usr/src/app/node_modules/axios/index.js
+  vue -> /usr/src/app/node_modules/vue/dist/vue.esm-bundler.js
+Error: The following dependencies are imported but could not be resolved:
+
+  vue3-wizard (imported by /usr/src/app/resources/js/app.js)
+  vue3-wizard/dist/style.css (imported by /usr/src/app/resources/js/app.js)
+
+Are they installed?
+    at file:///usr/src/app/node_modules/vite/dist/node/chunks/dep-cNe07EU9.js:52538:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///usr/src/app/node_modules/vite/dist/node/chunks/dep-cNe07EU9.js:52004:38

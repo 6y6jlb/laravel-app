@@ -15,6 +15,8 @@ else
   docker_compose_bin := $(shell command -v docker-compose 2> /dev/null)
 endif
 
+test:
+	echo $(APP_PATH)
 
 state: ## show state of all docker images
 	$(docker_bin) ps -a
@@ -22,19 +24,16 @@ state: ## show state of all docker images
 build: ## build all docker images
 	$(docker_compose_bin) build
 
-up-without-node: ## start application containers
-	$(docker_compose_bin) up --no-recreate --detach --scale $(NODE_CONTAINER_NAME)=0
-
 up: ## start application containers
 	$(docker_compose_bin) up --no-recreate --detach
 
-install: build up-without-node ## build and install application
+install: build up ## build and install application
 	$(docker_compose_bin) exec $(APP_CONTAINER_NAME) php artisan key:generate
 	make x-composer-install
 	make stop
 
-init: up-without-node x-composer-install x-database ## start application, refresh configs and helpers
-	$(docker_bin) run --rm -v $(APP_PATH):/var/www -w /var/www node:$(NODE_V) yarn install
+init: up x-composer-install x-database ## start application, refresh configs and helpers
+	$(docker_bin) run --rm -v $(APP_PATH):/var/www -w /var/www -u $(id -u):$(id -g) node:$(NODE_V) yarn install
 	$(docker_compose_bin) exec $(APP_CONTAINER_NAME) php artisan view:clear
 
 stop: ## stop application containers
@@ -46,16 +45,14 @@ down: ## stop and clear application containers
 
 
 front-watch: up ## interactive mode for editing front files
+	docker run --rm -it -v $(APP_PATH):/var/www -w /var/www -u $(id -u):$(id -g) -p 3000:3000 node:$(NODE_V) yarn dev
 
 
 front-build: up ## build assets to deploy-ready state
-	$(docker_compose_bin) exec -it $(NODE_CONTAINER_NAME) yarn run build
+	$(docker_bin) run --rm -v $(APP_PATH):/var/www -w /var/www -u $(id -u):$(id -g) node:$(NODE_V) yarn run build
 
 front-install: up ## install dependencies
-	ifndef package
-		$(docker_compose_bin) exec -it $(NODE_CONTAINER_NAME) yarn add $(package)
-	endif
-		$(docker_compose_bin) exec -it $(NODE_CONTAINER_NAME) yarn install
+	$(docker_bin) run --rm -v $(APP_PATH):/var/www -w /var/www -u $(id -u):$(id -g) node:$(NODE_V) yarn install
 
 
 x-composer-install:
